@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "web-style-sofia-udit-1",
+			"path": "."
+		},
+		{
+			"name": "student-project-template",
+			"path": "../web-atelier-udit/student-project-template"
+		},
+		{
+			"name": "assets",
+			"path": "../web-atelier-udit/student-project-template/assets"
+		}
+	],
+	"settings": {}
+}
