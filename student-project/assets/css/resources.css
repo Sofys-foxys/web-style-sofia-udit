@@ -1,0 +1,107 @@
+/* ===== RESOURCES PAGE SPECIFIC CSS ===== */
+
+/* Header */
+.resources-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+    color: var(--white);
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  /* Navigation */
+  .resources-nav {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-xl);
+  }
+  .resources-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+  }
+  .resources-nav a {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+  }
+  .resources-nav a:hover {
+    background-color: var(--bg-color);
+  }
+  
+  /* Tool Sections */
+  .tools-section {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  /* Grid */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  /* Tool Cards */
+  .tool-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .tool-card h3 a { color: var(--text-color); }
+  .tool-card h3 a:hover { color: var(--primary-color); }
+  
+  /* Runtime Badges */
+  .runtime-badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 9999px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+  }
+  .runtime-badge.saas {
+    background-color: #ed8936;
+    color: var(--white);
+  }
+  .runtime-badge.standalone {
+    background-color: #38bdf8;
+    color: var(--white);
+  }
+  
+  /* Personal Notes */
+  .personal-notes {
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--accent-color);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+  .personal-notes h4 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  /* Footer */
+  .resources-footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .resources-nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
