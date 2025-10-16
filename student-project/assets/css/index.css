@@ -2,6 +2,9 @@
 *::before,
 *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Page-specific bundle */
+@import url('resources.css');  /* <- importa resources.css desde la misma carpeta */
+
 /* CSS Variables (medium violet-lilac base) */
 :root{
   --primary-color: #6a4cd6;           /* deep accent for text/links */
