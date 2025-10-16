@@ -1,107 +1,145 @@
-/* ===== RESOURCES PAGE SPECIFIC CSS ===== */
+/* assets/css/resources.css */
+/* Specific styles for resources page, purple theme and multi-section layout */
 
 /* Header */
 .resources-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+    background: linear-gradient(135deg, rgba(107,33,168,0.95), rgba(167,139,250,0.85));
     color: var(--white);
-    text-align: center;
     padding: var(--spacing-xl) 0;
-  }
-  
-  /* Navigation */
-  .resources-nav {
-    background-color: var(--white);
+    text-align: center;
     box-shadow: var(--shadow);
-    padding: var(--spacing-md) 0;
-    margin-bottom: var(--spacing-xl);
   }
-  .resources-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
-  }
-  .resources-nav a {
-    padding: var(--spacing-xs) var(--spacing-sm);
+  .resources-header h1 { color: var(--white); margin-bottom: 0.4rem; }
+  .resources-header p { opacity: 0.95; color: rgba(255,255,255,0.95); }
+  
+  /* Nav */
+  .resources-nav {
+    background-color: rgba(255,255,255,0.95);
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    margin-top: -1.5rem;
+    margin-bottom: var(--spacing-lg);
     border-radius: var(--border-radius);
   }
-  .resources-nav a:hover {
-    background-color: var(--bg-color);
-  }
+  .resources-nav ul { list-style: none; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; align-items:center; padding:0.5rem 0; }
+  .resources-nav a { padding: 0.35rem 0.9rem; border-radius: 9999px; color: var(--primary-color); font-weight:600; }
+  .resources-nav a:hover { background: rgba(167,139,250,0.12); }
   
-  /* Tool Sections */
-  .tools-section {
-    margin-bottom: var(--spacing-xl);
-  }
+  /* Tools section */
+  .tools-section { margin-bottom: var(--spacing-xl); }
   
-  /* Grid */
-  .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-  }
-  
-  /* Tool Cards */
-  .tool-card {
-    background: var(--white);
-    border-radius: var(--border-radius);
+  /* Centered rectangle for glossary */
+  .centered-rect {
+    max-width: 1000px;
+    margin: 0.5rem auto var(--spacing-lg) auto;
+    border-radius: var(--border-radius-lg);
+    background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.95));
     padding: var(--spacing-lg);
     box-shadow: var(--shadow);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .tool-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-  .tool-card h3 a { color: var(--text-color); }
-  .tool-card h3 a:hover { color: var(--primary-color); }
-  
-  /* Runtime Badges */
-  .runtime-badge {
-    display: inline-block;
-    padding: 0.3rem 0.6rem;
-    border-radius: 9999px;
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    margin-bottom: var(--spacing-sm);
-  }
-  .runtime-badge.saas {
-    background-color: #ed8936;
-    color: var(--white);
-  }
-  .runtime-badge.standalone {
-    background-color: #38bdf8;
-    color: var(--white);
   }
   
-  /* Personal Notes */
-  .personal-notes {
-    background-color: var(--bg-color);
-    border-left: 4px solid var(--accent-color);
+  /* Glossary table */
+  .glossary-table th, .glossary-table td { padding: 0.6rem; }
+  
+  /* Tools grid layout: two rows x 5 columns */
+  .tools-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    grid-template-columns: repeat(5, 1fr);
+    align-items: stretch;
+  }
+  
+  /* When screen small, grid collapses via main CSS media query */
+  
+  /* Tool card visual */
+  .tool-card {
+    border-radius: var(--border-radius-lg);
     padding: var(--spacing-md);
-    margin-top: var(--spacing-md);
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    box-shadow: var(--shadow);
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,245,255,0.95));
+    display:flex;
+    flex-direction:column;
+    gap: 0.6rem;
+    min-height: 220px;
+    transition: transform .18s ease, box-shadow .18s ease;
   }
-  .personal-notes h4 {
-    color: var(--accent-color);
-    margin-bottom: var(--spacing-xs);
+  .tool-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .tool-card h3 { margin-top: 0.2rem; font-size: 1.05rem; }
+  .tool-card .tool-info { font-size: 0.93rem; color: #333; }
+  
+  /* Brand colors for cards (soft tints) */
+  .brand-tailwind { background: linear-gradient(180deg, #f0f9ff, #ecfeff); border: 1px solid rgba(56,189,248,0.08); }
+  .brand-bootstrap { background: linear-gradient(180deg, #fff7ed, #fffbf3); border: 1px solid rgba(251,146,60,0.06); }
+  .brand-hugo { background: linear-gradient(180deg,#f0fdf4,#f7fff0); border: 1px solid rgba(34,197,94,0.06); }
+  .brand-jekyll { background: linear-gradient(180deg,#fff1f2,#fff7f8); border:1px solid rgba(239,68,68,0.06); }
+  .brand-react { background: linear-gradient(180deg,#f7f6ff,#f4f3ff); border:1px solid rgba(99,102,241,0.06); }
+  .brand-gsap { background: linear-gradient(180deg,#fff8f0,#fffefc); border:1px solid rgba(250,204,21,0.06); }
+  .brand-mui { background: linear-gradient(180deg,#f3f6ff,#fbfdff); border:1px solid rgba(99,102,241,0.06); }
+  .brand-flowbite { background: linear-gradient(180deg,#f8fafc,#f9fbff); border:1px solid rgba(99,102,241,0.04); }
+  .brand-hygraph { background: linear-gradient(180deg,#fff9fb,#fffefe); border:1px solid rgba(236,72,153,0.04); }
+  .brand-imagekit { background: linear-gradient(180deg,#f8fff4,#fffef9); border:1px solid rgba(34,197,94,0.04); }
+  
+  /* Runtime badges */
+  .runtime-badge { display:inline-block; padding:0.25rem 0.5rem; border-radius:9999px; font-size:0.85rem; font-weight:700; margin-bottom:0.4rem; }
+  .runtime-badge.nodejs { background: #0ea5a3; color: #fff; }
+  .runtime-badge.standalone { background: #6366f1; color: #fff; }
+  .runtime-badge.saas { background: #f97316; color: #fff; }
+  .runtime-badge.ruby { background: #ef4444; color:#fff; }
+  
+  /* Personal notes */
+  .personal-notes { background: rgba(255,255,255,0.9); padding:0.6rem; border-left:4px solid rgba(167,139,250,0.8); border-radius:0 0.4rem 0.4rem 0; }
+  
+  /* Modal styling */
+  .modal {
+    position: fixed;
+    z-index: 1200;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15,15,15,0.45);
+    padding: var(--spacing-lg);
+  }
+  .modal-inner {
+    width: min(880px, 96%);
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    max-height: 80vh;
+    overflow: auto;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  /* Quick comparison table wrap */
+  .table-wrap { background: rgba(255,255,255,0.97); padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: var(--shadow); }
+  
+  /* Critical reflection */
+  .critical-reflection {
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,245,255,0.95));
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    line-height:1.65;
   }
   
   /* Footer */
-  .resources-footer {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    text-align: center;
-    padding: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
-  }
+  .resources-footer { background: linear-gradient(180deg, rgba(107,33,168,0.9), rgba(91,33,167,0.9)); color: #fff; text-align:center; padding: var(--spacing-lg) 0; margin-top: var(--spacing-xl); border-radius: var(--border-radius); }
+  .resources-footer p { opacity: 0.95; }
   
-  /* Responsive */
-  @media (max-width: 768px) {
-    .resources-nav ul {
-      flex-direction: column;
-      align-items: center;
-    }
+  /* Responsive adjustments */
+  @media (max-width: 1280px) {
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
   }
-  
+  @media (max-width: 900px) {
+    .tools-grid { grid-template-columns: 1fr; gap: var(--spacing-md); }
+  }

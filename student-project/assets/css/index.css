@@ -1,5 +1,7 @@
+/* assets/css/index.css */
 /* ===== MAIN CSS - RESET AND VARIABLES ===== */
 
+/* Basic reset */
 *,
 *::before,
 *::after {
@@ -8,23 +10,25 @@
   padding: 0;
 }
 
-/* CSS Variables */
+/* CSS Variables - adapted to a light purple theme */
 :root {
-  --primary-color: #2563eb;
-  --secondary-color: #64748b;
-  --accent-color: #f59e0b;
-  --text-color: #1e293b;
-  --bg-color: #f8fafc;
+  --primary-color: #6b21a8;      /* deep purple */
+  --secondary-color: #5b21a7;    /* mid purple */
+  --accent-color: #a78bfa;       /* lilac accent */
+  --text-color: #2b2b2b;
+  --bg-color: #f3e8ff;           /* light purple background */
   --white: #ffffff;
-  --border-color: #e2e8f0;
+  --border-color: #e9d5ff;
 
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
+  /* Spacing */
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.9rem;
+  --spacing-md: 1.25rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
 
-  --font-family: system-ui, -apple-system, sans-serif;
+  /* Typography */
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
@@ -32,19 +36,30 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 1.875rem;
 
-  --border-radius: 0.5rem;
-  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  /* Borders and shadows */
+  --border-radius: 0.6rem;
+  --border-radius-lg: 0.9rem;
+  --shadow: 0 6px 14px rgba(107,33,168,0.08);
+  --shadow-lg: 0 18px 40px rgba(107,33,168,0.12);
+}
+
+/* Base styles */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
-  line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Layout Container */
+/* Main container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,29 +67,55 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,h2,h3,h4,h5,h6 {
   font-weight: 600;
+  line-height: 1.2;
   margin-bottom: var(--spacing-sm);
 }
-
 h1 { font-size: var(--font-size-3xl); }
-h2 { font-size: var(--font-size-2xl); border-bottom: 2px solid var(--primary-color); padding-bottom: var(--spacing-xs); margin-bottom: var(--spacing-md);}
+h2 { font-size: var(--font-size-2xl); }
 h3 { font-size: var(--font-size-xl); }
+
 p { margin-bottom: var(--spacing-sm); }
 
-/* Links */
-a { color: var(--primary-color); text-decoration: none; }
+a { color: var(--primary-color); text-decoration: none; transition: color 0.15s ease; }
 a:hover { color: var(--accent-color); }
 
-/* Buttons (optional) */
+/* Buttons */
 .btn {
   display: inline-block;
+  padding: calc(var(--spacing-xs) + 2px) var(--spacing-md);
   background-color: var(--primary-color);
   color: var(--white);
-  padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--border-radius);
   text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
 }
-.btn:hover {
-  background-color: var(--accent-color);
+.btn:hover { background-color: var(--secondary-color); }
+
+/* Utilities */
+.text-center { text-align: center; }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+
+/* Small muted text */
+.small-muted { opacity: 0.85; font-size: 0.9rem; }
+
+/* Accessibility focus */
+:focus { outline: 3px solid rgba(167,139,250,0.25); outline-offset: 2px; }
+
+/* Table base */
+table { width: 100%; border-collapse: collapse; margin-top: var(--spacing-md); }
+thead th { text-align: left; padding: 0.65rem; background: rgba(107,33,168,0.08); border-bottom: 2px solid var(--border-color); }
+tbody td { padding: 0.75rem; border-bottom: 1px solid var(--border-color); font-size: 0.95rem; }
+
+/* Responsive stack */
+@media (max-width: 900px) {
+  .tools-grid { grid-template-columns: 1fr !important; }
+  .two-rows-5 article { width: 100%; }
 }
