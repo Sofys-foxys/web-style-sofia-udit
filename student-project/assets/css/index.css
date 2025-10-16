@@ -1,121 +1,88 @@
-/* assets/css/index.css */
-/* ===== MAIN CSS - RESET AND VARIABLES ===== */
-
-/* Basic reset */
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* CSS Variables - adapted to a light purple theme */
-:root {
-  --primary-color: #6b21a8;      /* deep purple */
-  --secondary-color: #5b21a7;    /* mid purple */
-  --accent-color: #a78bfa;       /* lilac accent */
-  --text-color: #2b2b2b;
-  --bg-color: #f3e8ff;           /* light purple background */
+/* CSS Variables (medium violet-lilac base) */
+:root{
+  --primary-color: #6a4cd6;           /* deep accent for text/links */
+  --secondary-color: #4b3aa6;         /* deeper accent */
+  --accent-color: #8f7cff;            /* bright lilac */
+  --text-color: #1f2430;
+  --bg-color: #c7b8ff;                /* medium violet-lilac background */
   --white: #ffffff;
-  --border-color: #e9d5ff;
+  --border-color: #e6e0ff;
 
   /* Spacing */
-  --spacing-xs: 0.4rem;
-  --spacing-sm: 0.9rem;
-  --spacing-md: 1.25rem;
+  --spacing-xs: .5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
 
-  /* Typography */
-  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --font-size-sm: 0.875rem;
+  /* Type */
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-sm: .875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.25rem;
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 1.875rem;
 
-  /* Borders and shadows */
-  --border-radius: 0.6rem;
-  --border-radius-lg: 0.9rem;
-  --shadow: 0 6px 14px rgba(107,33,168,0.08);
-  --shadow-lg: 0 18px 40px rgba(107,33,168,0.12);
+  /* Borders & shadows */
+  --border-radius: .5rem;
+  --border-radius-lg: .75rem;
+  --shadow: 0 8px 20px rgba(20, 20, 40, .08);
+  --shadow-lg: 0 24px 50px rgba(20, 20, 40, .16);
 }
 
-/* Base styles */
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
+/* Base */
+html { font-size: 16px; scroll-behavior: smooth; }
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text-color);
-  background-color: var(--bg-color);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  background: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
+/* Container */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
 
-/* Typography */
-h1,h2,h3,h4,h5,h6 {
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: var(--spacing-sm);
-}
+/* Type */
+h1,h2,h3,h4,h5,h6 { font-weight: 700; line-height: 1.2; margin-bottom: var(--spacing-sm); }
 h1 { font-size: var(--font-size-3xl); }
 h2 { font-size: var(--font-size-2xl); }
 h3 { font-size: var(--font-size-xl); }
-
 p { margin-bottom: var(--spacing-sm); }
+.lead { opacity: .9; }
 
-a { color: var(--primary-color); text-decoration: none; transition: color 0.15s ease; }
+/* Links & Buttons */
+a { color: var(--primary-color); text-decoration: none; transition: color .15s ease; }
 a:hover { color: var(--accent-color); }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: calc(var(--spacing-xs) + 2px) var(--spacing-md);
-  background-color: var(--primary-color);
-  color: var(--white);
+.btn{
+  display:inline-block; border:none; cursor:pointer;
+  padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--border-radius);
-  text-decoration: none;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
+  background: var(--primary-color); color: var(--white); font-weight: 600;
+  box-shadow: var(--shadow);
 }
-.btn:hover { background-color: var(--secondary-color); }
+.btn:hover{ background: var(--secondary-color); }
+
+/* Tables */
+table { width:100%; border-collapse: collapse; }
+thead th{
+  text-align:left; padding:.75rem 1rem; background: rgba(255,255,255,.6);
+  border-bottom: 2px solid var(--border-color);
+}
+tbody td{ padding:.75rem 1rem; border-bottom:1px solid var(--border-color); }
 
 /* Utilities */
-.text-center { text-align: center; }
-.mb-sm { margin-bottom: var(--spacing-sm); }
-.mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-.mt-sm { margin-top: var(--spacing-sm); }
-.mt-md { margin-top: var(--spacing-md); }
-
-/* Small muted text */
-.small-muted { opacity: 0.85; font-size: 0.9rem; }
-
-/* Accessibility focus */
-:focus { outline: 3px solid rgba(167,139,250,0.25); outline-offset: 2px; }
-
-/* Table base */
-table { width: 100%; border-collapse: collapse; margin-top: var(--spacing-md); }
-thead th { text-align: left; padding: 0.65rem; background: rgba(107,33,168,0.08); border-bottom: 2px solid var(--border-color); }
-tbody td { padding: 0.75rem; border-bottom: 1px solid var(--border-color); font-size: 0.95rem; }
-
-/* Responsive stack */
-@media (max-width: 900px) {
-  .tools-grid { grid-template-columns: 1fr !important; }
-  .two-rows-5 article { width: 100%; }
-}
+.mb-sm{ margin-bottom: var(--spacing-sm); }
+.mb-md{ margin-bottom: var(--spacing-md); }
+.mb-lg{ margin-bottom: var(--spacing-lg); }
+.mt-md{ margin-top: var(--spacing-md); }
+.subtitle{ opacity: .95; }
+.rating{ letter-spacing: 1px; font-weight: 700; }

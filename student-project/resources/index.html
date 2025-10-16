@@ -1,27 +1,51 @@
-<!-- resources/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Design Resources - Sofía Castro</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Resources-Sofía Castro</title>
   <link rel="stylesheet" href="../assets/css/index.css" />
   <link rel="stylesheet" href="../assets/css/resources.css" />
 </head>
 <body>
-  <header class="resources-header" id="top">
+  <header class="resources-header" id="top" role="banner">
     <div class="container">
-      <h1>Design Resources — Sofía Castro</h1>
-      <p class="mb-md">A personal reference guide: glossary, tools, quick comparisons and critical reflection.</p>
-      <p class="small-muted">Research base: WEB ATELIER (Classic and Modern Web Design Tools, 2025) and attached PDF resources.</p>
+      <div class="masthead">
+        <div class="brand">
+          <h1>Design Resources — Sofía Castro</h1>
+          <p class="subtitle">Glossary, curated tools, a quick comparison table, and a critical academic reflection.</p>
+        </div>
+      </div>
     </div>
   </header>
 
-  <nav class="resources-nav" aria-label="Main navigation">
+  <nav class="resources-nav" aria-label="Section navigation">
     <div class="container">
-      <ul>
-        <li><a href="#glossary">1. Glossary</a></li>
-        <li><a href="#tools">2. Tools</a></li>
+      <ul class="nav-level-1">
+        <li><a href="#glossary">1. Glossary</a>
+          <ul class="nav-level-2">
+            <li><a href="#glossary-runtime">1.2 Runtime requirements</a></li>
+            <li><a href="#glossary-node">1.3 Requires Node.js</a></li>
+            <li><a href="#glossary-nonode">1.4 No Node.js</a></li>
+            <li><a href="#glossary-ruby">1.5 Requires Ruby</a></li>
+            <li><a href="#glossary-standalone">1.6 Standalone binary</a></li>
+            <li><a href="#glossary-saas">1.7 SaaS</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">2. Tools</a>
+          <ul class="nav-level-2">
+            <li><a href="#tool-tailwind">TailwindCSS</a></li>
+            <li><a href="#tool-bootstrap">Bootstrap</a></li>
+            <li><a href="#tool-hugo">Hugo</a></li>
+            <li><a href="#tool-jekyll">Jekyll</a></li>
+            <li><a href="#tool-react">React</a></li>
+            <li><a href="#tool-gsap">GSAP</a></li>
+            <li><a href="#tool-mui">Material UI</a></li>
+            <li><a href="#tool-flowbite">Flowbite</a></li>
+            <li><a href="#tool-hygraph">Hygraph</a></li>
+            <li><a href="#tool-imagekit">ImageKit.io</a></li>
+          </ul>
+        </li>
         <li><a href="#comparison">3. Quick Comparison Table</a></li>
         <li><a href="#reflection">4. Critical Reflection</a></li>
       </ul>
@@ -29,391 +53,451 @@
   </nav>
 
   <main class="container" role="main">
-    <!-- GLOSSARY SECTION -->
+    <!-- =============== 1. GLOSSARY ====================== -->
     <section id="glossary" class="tools-section" aria-labelledby="glossary-title">
       <h2 id="glossary-title">1. Glossary</h2>
 
-      <article class="glossary-card centered-rect" aria-labelledby="runtime-title">
-        <h3 id="runtime-title">Runtime requirements</h3>
-        <div class="glossary-list">
-          <p><strong>📦 Requires Node.js</strong> — Tools that need Node.js for development/build (e.g., bundlers, modern frameworks).</p>
-          <p><strong>🌐 No Node.js</strong> — Tools that run from CDN or pure static assets (pure CSS, vanilla JS).</p>
-          <p><strong>🟥 Requires Ruby</strong> — Tools built on Ruby (for example: Jekyll).</p>
-          <p><strong>🟢 Standalone binary</strong> — Compiled single-binary tools (for example: Hugo).</p>
-          <p><strong>☁️ SaaS</strong> — Cloud-hosted services with web APIs (no local runtime install required).</p>
-        </div>
+      <article id="glossary-runtime" class="glossary-card centered-rect" aria-labelledby="runtime-title">
+        <h3 id="runtime-title">1.2 Runtime requirements</h3>
+        <p>
+          A runtime requirement is the environment a tool needs to run or build a site. In design education this framing
+          helps students choose workflows that match their project scope. Some tools are instantly usable in the browser;
+          others rely on a local development stack to compile, bundle, or serve content.
+        </p>
+      </article>
 
-        <h4 class="mb-sm">Pros & Cons (quick table)</h4>
-        <table class="glossary-table" summary="Comparison of runtime options">
+      <article class="glossary-card centered-rect">
+        <h3 id="glossary-node">1.3 Requires Node.js</h3>
+        <p>
+          Node-based tools use a package manager and scripts to automate tasks such as bundling, transforming CSS, and
+          running development servers. This is the dominant contemporary workflow and valuable for learning industry practice,
+          though it introduces configuration and version management.
+        </p>
+
+        <h3 id="glossary-nonode">1.4 No Node.js</h3>
+        <p>
+          These libraries and frameworks work from a CDN or simple download. They are effective in first-year courses or fast
+          prototypes because they minimise setup and foreground visual exploration over tooling.
+        </p>
+
+        <h3 id="glossary-ruby">1.5 Requires Ruby</h3>
+        <p>
+          Ruby tools such as Jekyll are historically aligned with GitHub Pages. They suit course blogs and documentation
+          sites, offering accessible templating with limited ecosystem breadth compared to Node.
+        </p>
+
+        <h3 id="glossary-standalone">1.6 Standalone binary</h3>
+        <p>
+          Standalone generators like Hugo ship as a single executable. They are portable, extremely fast, and stable across
+          lab machines—useful for large documentation or portfolio sites without dependency drift.
+        </p>
+
+        <h3 id="glossary-saas">1.7 SaaS</h3>
+        <p>
+          Cloud services provide hosted functionality (content, media, deployment) through a dashboard or API. They are
+          convenient for studio courses and collaborative projects, but introduce platform dependency and ongoing costs.
+        </p>
+      </article>
+
+      <article class="glossary-card centered-rect">
+        <h3>Pros and Cons of Each Runtime Environment</h3>
+        <p>This table summarises complexity, setup, resources, and typical trade-offs encountered in design coursework.</p>
+        <table class="glossary-table" summary="Comparison of runtime environments">
           <thead>
             <tr>
-              <th>Runtime</th>
+              <th>Runtime Type</th>
               <th>Level</th>
-              <th>Requires install?</th>
-              <th>Available resources</th>
-              <th>Ease of implementation</th>
+              <th>Requires Installation?</th>
+              <th>Resources Available</th>
+              <th>Ease of Use</th>
+              <th>Main Advantages</th>
+              <th>Main Disadvantages</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>📦 Node.js</td>
-              <td>Intermediate → Complex</td>
-              <td>Yes (npm/pnpm)</td>
-              <td>High</td>
-              <td>Moderate → Hard</td>
+              <td>Requires Node.js</td>
+              <td>Intermediate → Advanced</td>
+              <td>Yes (Node + package manager)</td>
+              <td>Very high</td>
+              <td>Moderate</td>
+              <td>Modern automation, modularity, hot reload</td>
+              <td>Setup overhead, dependency churn</td>
             </tr>
             <tr>
-              <td>🌐 No Node.js</td>
+              <td>No Node.js</td>
               <td>Beginner → Intermediate</td>
               <td>No (CDN)</td>
               <td>High</td>
-              <td>Easy → Moderate</td>
+              <td>Very easy</td>
+              <td>Immediate results, low friction</td>
+              <td>Limited automation and scale</td>
             </tr>
             <tr>
-              <td>🟥 Ruby</td>
+              <td>Requires Ruby</td>
               <td>Beginner → Intermediate</td>
-              <td>Yes (Ruby)</td>
+              <td>Yes (Ruby + Gems)</td>
               <td>Moderate</td>
               <td>Moderate</td>
+              <td>GitHub Pages friendly, simple templating</td>
+              <td>Smaller ecosystem, slower build chain</td>
             </tr>
             <tr>
-              <td>🟢 Standalone</td>
+              <td>Standalone binary</td>
               <td>Beginner → Intermediate</td>
-              <td>Download binary</td>
+              <td>Binary download only</td>
               <td>Moderate</td>
-              <td>Easy → Moderate</td>
+              <td>Easy</td>
+              <td>Very fast, reproducible builds</td>
+              <td>Less extensible, fewer plugins</td>
             </tr>
             <tr>
-              <td>☁️ SaaS</td>
+              <td>SaaS</td>
               <td>Beginner → Intermediate</td>
-              <td>No (web signup)</td>
+              <td>No (hosted)</td>
               <td>High</td>
               <td>Very easy</td>
+              <td>Scalable, collaborative dashboards</td>
+              <td>Vendor lock-in, recurring fees</td>
             </tr>
           </tbody>
         </table>
       </article>
     </section>
 
-    <!-- TOOLS GRID -->
+    <!-- =============== 2. TOOLS ====================== -->
     <section id="tools" class="tools-section" aria-labelledby="tools-title">
       <h2 id="tools-title">2. Tools</h2>
+      <p class="lead">Ten tools from different categories. Cards present a short summary; select any card to open a detailed analysis.</p>
 
-      <p class="mb-md">Research & classification of 10 tools across categories. Click any card to open an analysis popup.</p>
-
-      <div class="tools-grid two-rows-5">
-        <!-- Card 1 -->
-        <article class="tool-card brand-tailwind" data-tool="tailwind" tabindex="0" aria-labelledby="t1">
-          <div class="runtime-badge nodejs">📦 Node.js</div>
-          <h3 id="t1"><a href="https://tailwindcss.com" target="_blank" rel="noopener">TailwindCSS</a></h3>
-          <p class="tool-info"><strong>Key features:</strong> Utility-first, JIT, design systems.</p>
-          <div class="rating" aria-hidden="true">★★★★★</div>
+      <!-- 5 x 2 grid -->
+      <div class="tools-grid fixed-5x2">
+        <!-- CARD 1 -->
+        <article id="tool-tailwind" class="tool-card brand-tailwind">
+          <div class="runtime-badge">Requires Node.js</div>
+          <h3>TailwindCSS</h3>
+          <p class="tool-info"><strong>Key features:</strong> Utility-first CSS, JIT compiler, design tokens.</p>
+          <p class="rating" aria-label="rating">★★★★★</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Custom design systems, professional projects. Good for portfolio work with component-driven design.</p>
+            <p>Design systems, component libraries, portfolio theming.</p>
           </div>
-          <button class="btn open-card" data-target="modal-tailwind">Analyze</button>
+          <button class="btn open-card" data-target="modal-tailwind">Open analysis</button>
         </article>
 
-        <!-- Card 2 -->
-        <article class="tool-card brand-bootstrap" data-tool="bootstrap" tabindex="0" aria-labelledby="t2">
-          <div class="runtime-badge standalone">🌐 No Node.js</div>
-          <h3 id="t2"><a href="https://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a></h3>
-          <p class="tool-info"><strong>Key features:</strong> Responsive grid, prebuilt components.</p>
-          <div class="rating" aria-hidden="true">★★★★☆</div>
+        <!-- CARD 2 -->
+        <article id="tool-bootstrap" class="tool-card brand-bootstrap">
+          <div class="runtime-badge">No Node.js</div>
+          <h3>Bootstrap</h3>
+          <p class="tool-info"><strong>Key features:</strong> Grid, utilities, accessible components.</p>
+          <p class="rating">★★★★☆</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Rapid prototyping, quick portfolio scaffolding.</p>
+            <p>Rapid prototypes and coursework with minimal setup.</p>
           </div>
-          <button class="btn open-card" data-target="modal-bootstrap">Analyze</button>
+          <button class="btn open-card" data-target="modal-bootstrap">Open analysis</button>
         </article>
 
-        <!-- Card 3 -->
-        <article class="tool-card brand-hugo" data-tool="hugo" tabindex="0" aria-labelledby="t3">
-          <div class="runtime-badge standalone">🟢 Standalone</div>
-          <h3 id="t3"><a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a></h3>
-          <p class="tool-info"><strong>Key features:</strong> Ultra-fast static site generator, single binary.</p>
-          <div class="rating" aria-hidden="true">★★★★☆</div>
+        <!-- CARD 3 -->
+        <article id="tool-hugo" class="tool-card brand-hugo">
+          <div class="runtime-badge">Standalone binary</div>
+          <h3>Hugo</h3>
+          <p class="tool-info"><strong>Key features:</strong> Single binary, ultra-fast builds, templating.</p>
+          <p class="rating">★★★★☆</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Large docs sites, blogs and fast static portfolios.</p>
+            <p>Large static portfolios and documentation sites.</p>
           </div>
-          <button class="btn open-card" data-target="modal-hugo">Analyze</button>
+          <button class="btn open-card" data-target="modal-hugo">Open analysis</button>
         </article>
 
-        <!-- Card 4 -->
-        <article class="tool-card brand-jekyll" data-tool="jekyll" tabindex="0" aria-labelledby="t4">
-          <div class="runtime-badge ruby">🟥 Ruby</div>
-          <h3 id="t4"><a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a></h3>
-          <p class="tool-info"><strong>Key features:</strong> Markdown + Liquid templates, GitHub Pages friendly.</p>
-          <div class="rating" aria-hidden="true">★★★☆☆</div>
+        <!-- CARD 4 -->
+        <article id="tool-jekyll" class="tool-card brand-jekyll">
+          <div class="runtime-badge">Requires Ruby</div>
+          <h3>Jekyll</h3>
+          <p class="tool-info"><strong>Key features:</strong> Markdown, Liquid templates, GitHub Pages.</p>
+          <p class="rating">★★★☆☆</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Simple blogs, student portfolios on GitHub Pages.</p>
+            <p>Course journals and lightweight portfolio blogs.</p>
           </div>
-          <button class="btn open-card" data-target="modal-jekyll">Analyze</button>
+          <button class="btn open-card" data-target="modal-jekyll">Open analysis</button>
         </article>
 
-        <!-- Card 5 -->
-        <article class="tool-card brand-react" data-tool="react" tabindex="0" aria-labelledby="t5">
-          <div class="runtime-badge nodejs">📦 Node.js</div>
-          <h3 id="t5"><a href="https://reactjs.org/" target="_blank" rel="noopener">React</a></h3>
-          <p class="tool-info"><strong>Key features:</strong> Component-driven UI, SPA capability.</p>
-          <div class="rating" aria-hidden="true">★★★★★</div>
+        <!-- CARD 5 -->
+        <article id="tool-react" class="tool-card brand-react">
+          <div class="runtime-badge">Requires Node.js</div>
+          <h3>React</h3>
+          <p class="tool-info"><strong>Key features:</strong> Component model, hooks, virtual DOM.</p>
+          <p class="rating">★★★★★</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Interactive portfolios, component libraries and rich demos.</p>
+            <p>Interactive portfolio pieces and UI experiments.</p>
           </div>
-          <button class="btn open-card" data-target="modal-react">Analyze</button>
+          <button class="btn open-card" data-target="modal-react">Open analysis</button>
         </article>
 
-        <!-- Row 2: card 6-10 -->
-        <article class="tool-card brand-gsap" data-tool="gsap" tabindex="0" aria-labelledby="t6">
-          <div class="runtime-badge standalone">🌐 No Node.js</div>
-          <h3 id="t6"><a href="https://greensock.com/gsap/" target="_blank" rel="noopener">GSAP</a></h3>
-          <p class="tool-info"><strong>Key features:</strong> High-performance animations and timelines.</p>
-          <div class="rating" aria-hidden="true">★★★★★</div>
+        <!-- CARD 6 -->
+        <article id="tool-gsap" class="tool-card brand-gsap">
+          <div class="runtime-badge">No Node.js</div>
+          <h3>GSAP</h3>
+          <p class="tool-info"><strong>Key features:</strong> Timeline-based motion, scroll triggers.</p>
+          <p class="rating">★★★★★</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Interactive storytelling, hero animations and motion design in portfolios.</p>
+            <p>Narrative case studies and motion prototypes.</p>
           </div>
-          <button class="btn open-card" data-target="modal-gsap">Analyze</button>
+          <button class="btn open-card" data-target="modal-gsap">Open analysis</button>
         </article>
 
-        <article class="tool-card brand-mui" data-tool="mui" tabindex="0" aria-labelledby="t7">
-          <div class="runtime-badge nodejs">📦 Node.js</div>
-          <h3 id="t7"><a href="https://mui.com/" target="_blank" rel="noopener">Material UI</a></h3>
-          <p class="tool-info"><strong>Key features:</strong> React components implementing Material Design.</p>
-          <div class="rating" aria-hidden="true">★★★★☆</div>
+        <!-- CARD 7 -->
+        <article id="tool-mui" class="tool-card brand-mui">
+          <div class="runtime-badge">Requires Node.js</div>
+          <h3>Material UI</h3>
+          <p class="tool-info"><strong>Key features:</strong> React components, theming system.</p>
+          <p class="rating">★★★★☆</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Dashboard prototypes, consistent component sets.</p>
+            <p>Dashboard-style portfolios and design system demos.</p>
           </div>
-          <button class="btn open-card" data-target="modal-mui">Analyze</button>
+          <button class="btn open-card" data-target="modal-mui">Open analysis</button>
         </article>
 
-        <article class="tool-card brand-flowbite" data-tool="flowbite" tabindex="0" aria-labelledby="t8">
-          <div class="runtime-badge nodejs">📦 Node.js</div>
-          <h3 id="t8"><a href="https://flowbite.com/" target="_blank" rel="noopener">Flowbite</a></h3>
+        <!-- CARD 8 -->
+        <article id="tool-flowbite" class="tool-card brand-flowbite">
+          <div class="runtime-badge">Requires Node.js</div>
+          <h3>Flowbite</h3>
           <p class="tool-info"><strong>Key features:</strong> Tailwind component library.</p>
-          <div class="rating" aria-hidden="true">★★★☆☆</div>
+          <p class="rating">★★★☆☆</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Quick Tailwind-based components for landing pages.</p>
+            <p>Fast composition of landing sections with Tailwind.</p>
           </div>
-          <button class="btn open-card" data-target="modal-flowbite">Analyze</button>
+          <button class="btn open-card" data-target="modal-flowbite">Open analysis</button>
         </article>
 
-        <article class="tool-card brand-hygraph" data-tool="hygraph" tabindex="0" aria-labelledby="t9">
-          <div class="runtime-badge saas">☁️ SaaS</div>
-          <h3 id="t9"><a href="https://hygraph.com/" target="_blank" rel="noopener">Hygraph</a></h3>
+        <!-- CARD 9 -->
+        <article id="tool-hygraph" class="tool-card brand-hygraph">
+          <div class="runtime-badge">SaaS</div>
+          <h3>Hygraph</h3>
           <p class="tool-info"><strong>Key features:</strong> Headless CMS, GraphQL API.</p>
-          <div class="rating" aria-hidden="true">★★★★☆</div>
+          <p class="rating">★★★★☆</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Structured content for portfolios and larger projects.</p>
+            <p>Structured content for case studies and blogs.</p>
           </div>
-          <button class="btn open-card" data-target="modal-hygraph">Analyze</button>
+          <button class="btn open-card" data-target="modal-hygraph">Open analysis</button>
         </article>
 
-        <article class="tool-card brand-imagekit" data-tool="imagekit" tabindex="0" aria-labelledby="t10">
-          <div class="runtime-badge saas">☁️ SaaS</div>
-          <h3 id="t10"><a href="https://imagekit.io/" target="_blank" rel="noopener">ImageKit.io</a></h3>
-          <p class="tool-info"><strong>Key features:</strong> Image CDN & optimization.</p>
-          <div class="rating" aria-hidden="true">★★★★☆</div>
+        <!-- CARD 10 -->
+        <article id="tool-imagekit" class="tool-card brand-imagekit">
+          <div class="runtime-badge">SaaS</div>
+          <h3>ImageKit.io</h3>
+          <p class="tool-info"><strong>Key features:</strong> Image CDN, optimization, transforms.</p>
+          <p class="rating">★★★★☆</p>
           <div class="personal-notes">
             <h4>Recommended for</h4>
-            <p>Delivering optimized media for portfolios and case studies.</p>
+            <p>Media performance and responsive imagery.</p>
           </div>
-          <button class="btn open-card" data-target="modal-imagekit">Analyze</button>
+          <button class="btn open-card" data-target="modal-imagekit">Open analysis</button>
         </article>
-      </div> <!-- .tools-grid -->
+      </div>
     </section>
 
-    <!-- POPUP MODALS (one per tool, simplified content) -->
+    <!-- =============== MODALS (solid lilac, centered) ====================== -->
     <div id="modals">
-      <!-- Example modal template repeated with unique ids and content -->
+      <!-- Tailwind -->
       <div id="modal-tailwind" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-tailwind-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-tailwind-title">TailwindCSS — Analysis</h3>
-          <p><strong>Interface quality:</strong> N/A — library not a web app; documentation is highly organized and search-friendly.</p>
-          <p><strong>Discoverability:</strong> Docs are clear, many examples, starter templates available.</p>
-          <p><strong>Functions & Integration:</strong> Requires build step — integration is straightforward for projects that already use Node.js.</p>
-          <h4>Top 3 recommended code snippets to use in a portfolio</h4>
+          <p><strong>Interface quality.</strong> Tailwind is not a GUI but its documentation acts as an interface: search-driven, example-rich, and consistent. Students quickly acquire a vocabulary of utilities that map cleanly to CSS properties.</p>
+          <p><strong>Discoverability.</strong> Class names are systematic and predictable; the docs include copy-ready snippets and playground links, which shortens the trial-and-error cycle in studio work.</p>
+          <p><strong>Functional depth and integration.</strong> Requires Node for best use (JIT and PostCSS). It integrates effectively with React and static generators. The main risk is over-reliance on utility soup if design tokens are not planned.</p>
+          <p><strong>Strengths.</strong> Design system thinking, rapid iteration, excellent theming. <strong>Weaknesses.</strong> Build-time dependency; semantic readability may suffer without clear component structure.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>Reusable responsive card component (utilities + @apply example).</li>
-            <li>Hero with gradient and responsive layout (JIT classes).</li>
-            <li>Custom component with design tokens (theme extension).</li>
+            <li>Responsive project card with tokens (spacing, color scale).</li>
+            <li>Hero section using gradients and grid layout.</li>
+            <li>Accessible modal component with focus traps (Tailwind + JS).</li>
           </ol>
           <p class="external-link"><a href="https://tailwindcss.com/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
 
-      <!-- Modal bootstrap -->
+      <!-- Bootstrap -->
       <div id="modal-bootstrap" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-bootstrap-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-bootstrap-title">Bootstrap — Analysis</h3>
-          <p><strong>Interface quality:</strong> Documentation is mature, with good examples and templates.</p>
-          <p><strong>Discoverability:</strong> Component docs are easy to navigate.</p>
-          <p><strong>Functions & Integration:</strong> Very easy — CDN options available for instant use.</p>
-          <h4>Top 3 recommended code snippets</h4>
+          <p><strong>Interface quality.</strong> The documentation is highly structured with component pages, live examples, and code next to visuals. For coursework, this encourages quick assembly of functional layouts.</p>
+          <p><strong>Discoverability.</strong> Patterns are easy to find; the utility API reduces the need for custom CSS in early exercises.</p>
+          <p><strong>Functional depth and integration.</strong> Works via CDN; deeper theming requires Sass or build tools. Component JavaScript is minimal and accessible.</p>
+          <p><strong>Strengths.</strong> Fast, predictable, well-tested. <strong>Weaknesses.</strong> Visual sameness if tokens are not customised; heavier CSS footprint than utility-first approaches.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>Navbar + responsive collapse demo.</li>
-            <li>Card grid for project thumbnails.</li>
-            <li>Modal + form example for contact section.</li>
+            <li>Responsive navbar with collapse and active states.</li>
+            <li>Card grid for project thumbnails using the grid system.</li>
+            <li>Modal contact form with validation helpers.</li>
           </ol>
           <p class="external-link"><a href="https://getbootstrap.com/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
 
-      <!-- Modal hugo -->
+      <!-- Hugo -->
       <div id="modal-hugo" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-hugo-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-hugo-title">Hugo — Analysis</h3>
-          <p><strong>Interface quality:</strong> CLI and theme ecosystem; docs are solid and theme demos are easy to inspect.</p>
-          <p><strong>Discoverability:</strong> Many themes available and quick local dev server.</p>
-          <p><strong>Functions & Integration:</strong> Single binary makes deployments and CI simple.</p>
-          <h4>Top 3 recommended code snippets</h4>
+          <p><strong>Interface quality.</strong> Hugo’s CLI is concise; theme demos and partials serve as the practical interface. Students benefit from reproducible builds across lab computers.</p>
+          <p><strong>Discoverability.</strong> Documentation includes canonical examples and a strong theme directory; taxonomies and shortcodes are well covered.</p>
+          <p><strong>Functional depth and integration.</strong> Single binary, near-instant builds. Integrates with Markdown, data files, and external APIs at build time. Template logic is powerful but requires learning Go-templating idioms.</p>
+          <p><strong>Strengths.</strong> Speed, stability, portability. <strong>Weaknesses.</strong> Smaller ecosystem of plugins; advanced interactivity requires client-side JS.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>Theme partial for projects listing.</li>
-            <li>Shortcode for image optimization and captions.</li>
-            <li>Taxonomy templates for case studies.</li>
+            <li>List templates for projects with taxonomies.</li>
+            <li>Shortcode for responsive images and captions.</li>
+            <li>Partial for SEO and social card metadata.</li>
           </ol>
           <p class="external-link"><a href="https://gohugo.io/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
 
-      <!-- Modal jekyll -->
+      <!-- Jekyll -->
       <div id="modal-jekyll" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-jekyll-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-jekyll-title">Jekyll — Analysis</h3>
-          <p><strong>Interface quality:</strong> Good docs; GitHub Pages integration is a plus for beginners.</p>
-          <p><strong>Discoverability:</strong> Easy to find templates and example repos.</p>
-          <p><strong>Functions & Integration:</strong> Ruby install required; simple for basic blogs.</p>
-          <h4>Top 3 recommended code snippets</h4>
+        <p><strong>Interface quality.</strong> Clear directory conventions and Liquid templating provide a gentle learning curve, suitable for reflective journals and process blogs.</p>
+        <p><strong>Discoverability.</strong> Many student-friendly examples exist on GitHub; GitHub Pages integration removes deployment friction.</p>
+        <p><strong>Functional depth and integration.</strong> Plugin ecosystem is modest; build times are slower than Hugo. Ideal for Markdown-centred content rather than heavy interaction.</p>
+        <p><strong>Strengths.</strong> Simplicity and hosting convenience. <strong>Weaknesses.</strong> Limited extensibility compared to Node ecosystems.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>Layout + include system (header/footer).</li>
-            <li>Post list with Liquid templating.</li>
-            <li>Basic data-driven project gallery.</li>
+            <li>Layout and include structure (header, footer, SEO).</li>
+            <li>Post list with excerpts and tags.</li>
+            <li>Data-driven project pages using YAML.</li>
           </ol>
           <p class="external-link"><a href="https://jekyllrb.com/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
 
-      <!-- Modal react -->
+      <!-- React -->
       <div id="modal-react" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-react-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-react-title">React — Analysis</h3>
-          <p><strong>Interface quality:</strong> Not a single UI but an ecosystem — documentation and community are excellent.</p>
-          <p><strong>Discoverability:</strong> Huge number of tutorials, examples and component libraries.</p>
-          <p><strong>Functions & Integration:</strong> Requires Node.js; powerful for interactive portfolio features.</p>
-          <h4>Top 3 recommended code snippets</h4>
+          <p><strong>Interface quality.</strong> React is a library rather than a UI, yet its mental model (components, props, state) is a powerful pedagogical tool for thinking about modular interfaces.</p>
+          <p><strong>Discoverability.</strong> Extensive documentation and community recipes; integration examples with routing, data-fetching, and testing are abundant.</p>
+          <p><strong>Functional depth and integration.</strong> Excels at interactive exhibits and micro-apps within a portfolio. Requires Node and a bundler; complexity rises with ecosystem choices.</p>
+          <p><strong>Strengths.</strong> Composability and reusability. <strong>Weaknesses.</strong> Tooling sprawl; performance pitfalls without profiling.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>Project card component with props and responsive layout.</li>
-            <li>Small interactive demo using state & hooks.</li>
-            <li>Accessible modal + gallery component.</li>
+            <li>Project card component with props and accessibility.</li>
+            <li>Lightbox gallery with keyboard navigation.</li>
+            <li>Interactive data viz using a small chart library.</li>
           </ol>
-          <p class="external-link"><a href="https://reactjs.org/" target="_blank" rel="noopener">link</a></p>
+          <p class="external-link"><a href="https://react.dev/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
 
-      <!-- Modal gsap -->
+      <!-- GSAP -->
       <div id="modal-gsap" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-gsap-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-gsap-title">GSAP — Analysis</h3>
-          <p><strong>Interface quality:</strong> Strong docs and demos; club of paid plugins but core works via CDN.</p>
-          <p><strong>Discoverability:</strong> Excellent demo pages and examples.</p>
-          <p><strong>Functions & Integration:</strong> Easy via CDN; advanced capabilities for timing and performance.</p>
-          <h4>Top 3 recommended code snippets</h4>
+          <p><strong>Interface quality.</strong> GSAP’s timeline is a conceptual interface that clarifies motion sequencing; docs feature runnable demos that are ideal for studio critique.</p>
+          <p><strong>Discoverability.</strong> The examples directory and articles make advanced effects approachable without heavy math.</p>
+          <p><strong>Functional depth and integration.</strong> Works from CDN; integrates with scroll libraries and frameworks. Overuse can distract from content if motion hierarchy is not considered.</p>
+          <p><strong>Strengths.</strong> Precision, performance, professional-grade control. <strong>Weaknesses.</strong> Complexity for beginners; proprietary plugins for some features.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>Hero timeline with staggered reveals.</li>
-            <li>Scroll-triggered timeline for case-study storytelling.</li>
-            <li>Micro-interaction set for CTA hover effects.</li>
+            <li>Hero sequence with staggered reveals.</li>
+            <li>Scroll-driven storytelling timeline.</li>
+            <li>Micro-interactions for hover and focus states.</li>
           </ol>
           <p class="external-link"><a href="https://greensock.com/gsap/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
 
-      <!-- Modal mui -->
+      <!-- MUI -->
       <div id="modal-mui" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-mui-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-mui-title">Material UI — Analysis</h3>
-          <p><strong>Interface quality:</strong> Excellent component docs, style system and examples.</p>
-          <p><strong>Discoverability:</strong> Easy to find code snippets and playgrounds in docs.</p>
-          <p><strong>Functions & Integration:</strong> Install via npm; ideal for React dashboards.</p>
-          <h4>Top 3 recommended code snippets</h4>
+          <p><strong>Interface quality.</strong> Component docs are exemplary, with prop tables, usage patterns, and live sandboxes that support independent study.</p>
+          <p><strong>Discoverability.</strong> Clear navigation and example gallery. Students can learn design tokens and theming through configuration rather than bespoke CSS.</p>
+          <p><strong>Functional depth and integration.</strong> Requires React and Node; strong accessibility defaults. Styling decisions can become prescriptive if not customised.</p>
+          <p><strong>Strengths.</strong> Consistency, accessibility, and scalability. <strong>Weaknesses.</strong> Opinionated visual language; bundle size if tree-shaking is poor.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>Dashboard layout with drawer and app bar.</li>
-            <li>Data table with pagination.</li>
-            <li>Form with validation and material inputs.</li>
+            <li>Dashboard with navigation drawer and app bar.</li>
+            <li>Data table with sorting and pagination.</li>
+            <li>Theme switcher demonstrating tokens.</li>
           </ol>
           <p class="external-link"><a href="https://mui.com/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
 
-      <!-- Modal flowbite -->
+      <!-- Flowbite -->
       <div id="modal-flowbite" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-flowbite-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-flowbite-title">Flowbite — Analysis</h3>
-          <p><strong>Interface quality:</strong> Component docs and code examples oriented to Tailwind users.</p>
-          <p><strong>Discoverability:</strong> Straightforward component listing and usage.</p>
-          <p><strong>Functions & Integration:</strong> Works with Tailwind projects; CDN options exist.</p>
-          <h4>Top 3 recommended code snippets</h4>
+          <p><strong>Interface quality.</strong> Documentation mirrors Tailwind idioms with copy-paste snippets that speed up assembly of typical marketing sections.</p>
+          <p><strong>Discoverability.</strong> Components are grouped by purpose; examples are concise and easy to adapt.</p>
+          <p><strong>Functional depth and integration.</strong> Pairs best with Tailwind projects. Over-reliance can reduce originality unless tokens and composition are customised.</p>
+          <p><strong>Strengths.</strong> Velocity and coherence. <strong>Weaknesses.</strong> Risk of generic aesthetic; limited beyond Tailwind.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>Hero with ready-made components.</li>
-            <li>Pricing cards with responsive layout.</li>
-            <li>Interactive navbar with dropdowns.</li>
+            <li>Pricing section with responsive cards.</li>
+            <li>Accessible navigation with dropdowns.</li>
+            <li>Testimonials slider using utility classes.</li>
           </ol>
           <p class="external-link"><a href="https://flowbite.com/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
 
-      <!-- Modal hygraph -->
+      <!-- Hygraph -->
       <div id="modal-hygraph" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-hygraph-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-hygraph-title">Hygraph — Analysis</h3>
-          <p><strong>Interface quality:</strong> Modern dashboard for content modelling, GraphQL playground included.</p>
-          <p><strong>Discoverability:</strong> Good docs and quickstart guides.</p>
-          <p><strong>Functions & Integration:</strong> SaaS; integrate via GraphQL for dynamic content.</p>
-          <h4>Top 3 recommended code snippets</h4>
+          <p><strong>Interface quality.</strong> The dashboard supports modelling, permissions, and content editing with clear affordances; the GraphQL explorer is a strong learning aid.</p>
+          <p><strong>Discoverability.</strong> Starters and quickstarts cover common stacks; schema examples translate well to portfolio content types.</p>
+          <p><strong>Functional depth and integration.</strong> SaaS reliability with webhooks and API access. Introduces external dependency and potential cost considerations after graduation.</p>
+          <p><strong>Strengths.</strong> Structured content at scale. <strong>Weaknesses.</strong> Vendor lock-in; requires network access.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>GraphQL query for project listings.</li>
-            <li>Integration snippet for static export/SSG.</li>
-            <li>Webhook example for build triggers.</li>
+            <li>GraphQL query to list projects by category.</li>
+            <li>Static build integration example (SSG).</li>
+            <li>Webhook trigger for rebuilds on publish.</li>
           </ol>
           <p class="external-link"><a href="https://hygraph.com/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
 
-      <!-- Modal imagekit -->
+      <!-- ImageKit -->
       <div id="modal-imagekit" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-imagekit-title">
-        <div class="modal-inner">
-          <button class="modal-close" data-close>✕</button>
+        <div class="modal-inner modal-lilac" tabindex="-1">
+          <button class="modal-close" data-close title="Close">×</button>
           <h3 id="modal-imagekit-title">ImageKit.io — Analysis</h3>
-          <p><strong>Interface quality:</strong> Clean docs and API references; quickstart examples for many frameworks.</p>
-          <p><strong>Discoverability:</strong> Good examples covering transformations and optimization.</p>
-          <p><strong>Functions & Integration:</strong> SaaS API/SDKs for quick integration; CDN-backed.</p>
-          <h4>Top 3 recommended code snippets</h4>
+          <p><strong>Interface quality.</strong> The dashboard clarifies sources, transformations, and caching. The URL-based API is memorable and easy to test.</p>
+          <p><strong>Discoverability.</strong> Guides show responsive image patterns for multiple frameworks; code samples are concise.</p>
+          <p><strong>Functional depth and integration.</strong> CDN delivery, automatic format negotiation, and transformations improve portfolio performance. Reliance on a third-party service must be acknowledged in documentation.</p>
+          <p><strong>Strengths.</strong> Performance and global delivery. <strong>Weaknesses.</strong> Platform dependency and quotas.</p>
+          <h4>Recommended portfolio code</h4>
           <ol>
-            <li>Responsive image srcset + optimization snippet.</li>
-            <li>On-the-fly resizing and cropping examples.</li>
-            <li>CDN delivery integration in static sites.</li>
+            <li>Srcset pattern for responsive images.</li>
+            <li>On-the-fly transformation URLs.</li>
+            <li>Low-quality image placeholders for perceived speed.</li>
           </ol>
           <p class="external-link"><a href="https://imagekit.io/" target="_blank" rel="noopener">link</a></p>
         </div>
       </div>
     </div>
 
-    <!-- QUICK COMPARISON TABLE -->
+    <!-- =============== 3. QUICK COMPARISON TABLE ====================== -->
     <section id="comparison" class="tools-section" aria-labelledby="comparison-title">
       <h2 id="comparison-title">3. Quick Comparison Table</h2>
       <div class="table-wrap">
@@ -428,32 +512,47 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>TailwindCSS</td><td>📦 Node.js</td><td>Intermediate</td><td>Design systems, custom UI</td><td>High</td></tr>
-            <tr><td>Bootstrap</td><td>🌐 No Node.js</td><td>Beginner → Intermediate</td><td>Quick prototyping</td><td>High</td></tr>
-            <tr><td>Hugo</td><td>🟢 Standalone</td><td>Beginner → Intermediate</td><td>Large static sites/docs</td><td>Medium</td></tr>
-            <tr><td>Jekyll</td><td>🟥 Ruby</td><td>Beginner → Intermediate</td><td>Blogs, GitHub Pages</td><td>Low → Medium</td></tr>
-            <tr><td>React</td><td>📦 Node.js</td><td>Intermediate → Advanced</td><td>Interactive portfolios</td><td>High</td></tr>
-            <tr><td>GSAP</td><td>🌐 No Node.js</td><td>Intermediate → Advanced</td><td>Motion & storytelling</td><td>High</td></tr>
-            <tr><td>Material UI</td><td>📦 Node.js</td><td>Intermediate</td><td>Dashboards</td><td>Medium</td></tr>
-            <tr><td>Flowbite</td><td>📦 Node.js</td><td>Intermediate</td><td>Tailwind components</td><td>Medium</td></tr>
-            <tr><td>Hygraph</td><td>☁️ SaaS</td><td>Intermediate</td><td>Structured content (Headless CMS)</td><td>Medium</td></tr>
-            <tr><td>ImageKit.io</td><td>☁️ SaaS</td><td>Beginner</td><td>Image CDN & optimization</td><td>High</td></tr>
+            <tr><td>TailwindCSS</td><td>Requires Node.js</td><td>Intermediate</td><td>Design systems, custom UI</td><td>High</td></tr>
+            <tr><td>Bootstrap</td><td>No Node.js</td><td>Beginner → Intermediate</td><td>Rapid prototyping</td><td>High</td></tr>
+            <tr><td>Hugo</td><td>Standalone binary</td><td>Beginner → Intermediate</td><td>Large static sites/docs</td><td>Medium</td></tr>
+            <tr><td>Jekyll</td><td>Requires Ruby</td><td>Beginner → Intermediate</td><td>Blogs, GitHub Pages</td><td>Medium</td></tr>
+            <tr><td>React</td><td>Requires Node.js</td><td>Intermediate → Advanced</td><td>Interactive showcases</td><td>High</td></tr>
+            <tr><td>GSAP</td><td>No Node.js</td><td>Intermediate → Advanced</td><td>Motion & storytelling</td><td>High</td></tr>
+            <tr><td>Material UI</td><td>Requires Node.js</td><td>Intermediate</td><td>Dashboards & systems</td><td>Medium</td></tr>
+            <tr><td>Flowbite</td><td>Requires Node.js</td><td>Intermediate</td><td>Tailwind components</td><td>Medium</td></tr>
+            <tr><td>Hygraph</td><td>SaaS</td><td>Intermediate</td><td>Headless content</td><td>Medium</td></tr>
+            <tr><td>ImageKit.io</td><td>SaaS</td><td>Beginner</td><td>Image optimisation</td><td>High</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- CRITICAL REFLECTION -->
+    <!-- =============== 4. CRITICAL REFLECTION ====================== -->
     <section id="reflection" class="tools-section" aria-labelledby="reflection-title">
       <h2 id="reflection-title">4. Critical Reflection</h2>
-
       <article class="critical-reflection">
         <p>
-          In evaluating the ten tools above I found that runtime requirements strongly shape the workflow choices for a portfolio developer. Tools that require Node.js (Tailwind, React, Material UI, Flowbite) introduce a modern, flexible development chain that favors componentization, fast local development servers, and bundler-based optimizations. The trade-off is an initial complexity cost: installing Node, learning npm/pnpm, and adding build steps can slow early prototyping compared to pure CDN approaches. However, for medium-to-large portfolios and interactive demos the benefits are clear — better reproducibility, automated asset pipelines, and easier integration of modern libraries. Conversely, CDN-first and standalone options (Bootstrap, GSAP via CDN, Hugo as a single binary) offer immediate results and easy discovery; they are strikingly effective for fast prototypes, landing pages, and students who want to publish quickly. SaaS tools like Hygraph and ImageKit remove infrastructure overhead and provide high reliability, but create external dependencies that must be considered for long-term maintenance and cost. In brief: Node.js ecosystems win for scale and control; CDN/standalone options win for speed and ease.
+          Surveying the tools across runtime categories reveals that the choice of environment meaningfully shapes what students
+          learn about the web. Node-based stacks (Tailwind, React, Material UI, Flowbite) cultivate habits aligned with professional
+          practice: versioned dependencies, modular code, and automated transformations. The trade-off is cognitive load during
+          setup and the risk of spending time on tooling rather than design critique. In contrast, CDN-based resources (Bootstrap,
+          GSAP) encourage immediacy. They lower barriers for first iterations, which is pedagogically useful when the priority is
+          structure, typographic rhythm, and motion principles. Standalone binaries like Hugo illustrate an under-taught aspect
+          of web craft: build determinism and performance. Their reliability is valuable for assessment contexts where reproducible
+          results on different machines matter. Ruby’s Jekyll endures because publishing on GitHub Pages is frictionless, making
+          it a sensible gateway for reflective practice and course journals. SaaS platforms (Hygraph, ImageKit) highlight the
+          contemporary split between authoring and delivery: content models and CDNs externalise complexity but introduce
+          dependency and cost considerations that should be addressed in documentation.
         </p>
-
         <p>
-          Considering how I would apply these tools in a portfolio, I would adopt a hybrid approach: use a static-site generator (Hugo) or a lightweight SSG for the content shell, leverage ImageKit for optimized media delivery, and include small interactive components with React when interactivity justifies the overhead. For animations and storytelling segments I prefer GSAP for its precision and performance while reserving Tailwind for the base design system when I need tight visual control. Where time-to-publish matters (teaching examples, quick client mockups) Bootstrap + CDN or ready templates from HTML5 UP remain my top choice because they reduce friction. Finally, the choice between Node and non-Node workflows is not purely technical — it’s pedagogical: learning Node opens career-relevant skills but for many portfolio goals the non-Node path is perfectly valid and pragmatic. The critical takeaway is to pick the smallest toolset that solves the problem well, avoid unnecessary complexity, and document the chosen workflow clearly in each project.
+          A pragmatic studio strategy is to start with the smallest viable stack and escalate only when learning objectives demand
+          it. Early prototypes can be assembled with Bootstrap and GSAP to surface interaction narratives; once the concept
+          stabilises, Tailwind can formalise a design system and React can demonstrate interactive components with state management.
+          For content-heavy submissions, Hugo offers speed and reliable builds, while Hygraph demonstrates data modelling and
+          editorial workflows. ImageKit improves perceived performance with responsive images and transformation URLs that can be
+          explained in an appendix. Across all tools, reflection should emphasise rationale: why a stack was chosen, how it supports
+          accessibility and maintainability, and what trade-offs were accepted. This framing equips students to articulate design
+          decisions during critiques and in professional portfolios, showing not only polished outcomes but also informed process.
         </p>
       </article>
     </section>
@@ -461,11 +560,11 @@
 
   <footer class="resources-footer" role="contentinfo">
     <div class="container">
-      <p>© Sofía Castro — Design Resources reference. Sources: WEB ATELIER (Rubén Vega Balbás, 2025) and provided course materials.</p>
+      <p>© Sofía Castro — Design Resources reference.</p>
     </div>
   </footer>
 
-  <!-- Minimal JavaScript for modal behavior and smooth interaction -->
+  <!-- Minimal JS for modal behavior -->
   <script>
     (function () {
       const openButtons = document.querySelectorAll('.open-card');
@@ -476,8 +575,9 @@
         const m = document.getElementById(id);
         if (!m) return;
         m.setAttribute('aria-hidden','false');
-        m.style.display = 'block';
-        m.querySelector('.modal-inner').focus();
+        m.style.display = 'flex';
+        const inner = m.querySelector('.modal-inner');
+        if (inner) inner.focus();
       }
       function closeModal(m) {
         if (!m) return;
@@ -485,34 +585,16 @@
         m.style.display = 'none';
       }
       openButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const target = btn.getAttribute('data-target');
-          openModal(target);
-        });
+        btn.addEventListener('click', () => openModal(btn.getAttribute('data-target')));
       });
       closeButtons.forEach(b => {
-        b.addEventListener('click', (e) => {
-          const m = b.closest('.modal');
-          closeModal(m);
-        });
+        b.addEventListener('click', () => closeModal(b.closest('.modal')));
       });
-      // close on overlay click
       modals.forEach(m => {
-        m.addEventListener('click', (e) => {
-          if (e.target === m) closeModal(m);
-        });
+        m.addEventListener('click', (e) => { if (e.target === m) closeModal(m); });
       });
-      // close on ESC
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          modals.forEach(m => closeModal(m));
-        }
-      });
-      // Initialize modals as hidden
-      modals.forEach(m => {
-        m.setAttribute('aria-hidden','true');
-        m.style.display = 'none';
-      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modals.forEach(closeModal); });
+      modals.forEach(m => { m.setAttribute('aria-hidden','true'); m.style.display = 'none'; });
     })();
   </script>
 </body>
