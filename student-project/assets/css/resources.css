@@ -32,12 +32,16 @@
     background: rgba(255, 255, 255, 0.4);
   }
   
+  /* ---------- Compact Nested Navigation ---------- */
   .resources-nav {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 0 0 16px 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    max-width: 300px;
+    margin: 1.5rem auto;
+    text-align: left;
     display: none;
     transition: all 0.3s ease;
   }
@@ -50,27 +54,49 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+  }
+  
+  .resources-nav li {
+    margin: 0.4rem 0;
   }
   
   .resources-nav a {
-    display: inline-block;
-    margin: 0.5rem 1rem;
-    padding: 0.6rem 1.2rem;
-    color: #5a3ec8;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 999px;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #4c30d8;
     font-weight: 600;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    transition: all 0.25s ease;
   }
   
   .resources-nav a:hover {
-    background: #c7b8ff;
-    color: #2d1c88;
+    background: #dcd3ff;
+    color: #2b1d8a;
   }
   
-  /* Keep nav open on large screens */
+  /* Submenú (nivel 2) */
+  .nav-level-2 {
+    margin-left: 1rem;
+    border-left: 2px solid rgba(120, 90, 230, 0.25);
+    padding-left: 0.75rem;
+    display: none;
+  }
+  
+  /* Mostrar submenú al pasar el ratón */
+  .resources-nav li:hover > .nav-level-2 {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Pantallas grandes: menú lateral fijo */
   @media (min-width: 900px) {
     .nav-toggle {
       display: none;
@@ -78,18 +104,17 @@
   
     .resources-nav {
       display: block;
-      position: static;
-      padding: 1.5rem 0;
+      position: sticky;
+      top: 2rem;
+      float: left;
+      margin: 2rem;
+      border-radius: 12px;
+      max-width: 260px;
+      height: fit-content;
     }
   
-    .resources-nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-  
-    .resources-nav a {
-      margin: 0.5rem 0.75rem;
+    main.container {
+      margin-left: 300px;
     }
   }
   
@@ -237,3 +262,4 @@
     margin-top: 4rem;
     border-radius: 16px 16px 0 0;
   }
+  
