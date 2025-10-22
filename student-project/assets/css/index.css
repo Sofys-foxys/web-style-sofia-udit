@@ -7,11 +7,11 @@
 
 /* CSS Variables (medium violet-lilac base) */
 :root{
-  --primary-color: #6a4cd6;           /* deep accent for text/links */
-  --secondary-color: #4b3aa6;         /* deeper accent */
-  --accent-color: #8f7cff;            /* bright lilac */
+  --primary-color: #6a4cd6;        
+  --secondary-color: #4b3aa6;        
+  --accent-color: #8f7cff;            
   --text-color: #1f2430;
-  --bg-color: #c7b8ff;                /* medium violet-lilac background */
+  --bg-color: #c7b8ff;               
   --white: #ffffff;
   --border-color: #e6e0ff;
 
