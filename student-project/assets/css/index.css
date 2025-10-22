@@ -3,9 +3,8 @@
 *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* Page-specific bundle */
-@import url('resources.css');  /* <- importa resources.css desde la misma carpeta */
+@import url('resources.css');  
 
-/* CSS Variables (medium violet-lilac base) */
 :root{
   --primary-color: #6a4cd6;        
   --secondary-color: #4b3aa6;        
@@ -15,7 +14,6 @@
   --white: #ffffff;
   --border-color: #e6e0ff;
 
-  /* Spacing */
   --spacing-xs: .5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -31,14 +29,13 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 1.875rem;
 
-  /* Borders & shadows */
   --border-radius: .5rem;
   --border-radius-lg: .75rem;
   --shadow: 0 8px 20px rgba(20, 20, 40, .08);
   --shadow-lg: 0 24px 50px rgba(20, 20, 40, .16);
 }
 
-/* Base */
+
 html { font-size: 16px; scroll-behavior: smooth; }
 body {
   font-family: var(--font-family);
