@@ -20,7 +20,7 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
 
-  /* Type */
+  
   --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-size-sm: .875rem;
   --font-size-base: 1rem;
@@ -58,7 +58,7 @@ h3 { font-size: var(--font-size-xl); }
 p { margin-bottom: var(--spacing-sm); }
 .lead { opacity: .9; }
 
-/* Links & Buttons */
+/* Links-Buttons */
 a { color: var(--primary-color); text-decoration: none; transition: color .15s ease; }
 a:hover { color: var(--accent-color); }
 
