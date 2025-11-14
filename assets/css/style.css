@@ -197,3 +197,29 @@ select:focus {
   background: #4a2fd0;
   transform: translateY(-2px);
 }
+/* ===== 404 exercise===== */
+.mars-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-size: 15px;
+    font-weight: 600;
+
+    background: linear-gradient(135deg, #ff7b3d, #b73221);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+
+    box-shadow: 0 4px 12px rgba(255, 120, 60, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mars-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(255, 120, 60, 0.55);
+}
+
+.mars-btn .emoji {
+    font-size: 20px;
+}
