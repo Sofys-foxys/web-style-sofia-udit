@@ -190,9 +190,10 @@ select:focus {
   padding: 0.8rem 1.5rem;
   border-radius: 999px;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:  0.3s ease, transform 0.2s ease;
 }
 
 .btn-view:hover {
   background: #4a2fd0;
   transform: translateY(-2px);
+}
