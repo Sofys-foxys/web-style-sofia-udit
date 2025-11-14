@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Rover Lost on Mars</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <!-- Canvas del juego -->
+      <canvas id="game" width="800" height="600"></canvas>
+
+      <!-- HUD -->
+      <div class="hud">
+        <div class="hud-left">
+          <div class="emoji">🚀</div>
+          <div class="hud-text">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="info">Use ← → or touch to move. Avoid Martian rocks.</div>
+          </div>
+        </div>
+        <button id="restart" class="button" hidden>Restart mission</button>
+      </div>
+
+      <!-- Sección 404 -->
+      <section class="copy">
+        <div class="copy-header">
+          <span class="pill">404s to Mars · Hackathon</span>
+        </div>
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Rover lost on the wrong page</h2>
+        <p class="error-message">
+          Our Mars rover took a wrong turn and couldn’t locate this sector.
+          Help it dodge rocks, then return to mission control.
+        </p>
+        <a href="/" class="cta">⟵ Return to base</a>
+      </section>
+    </div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
